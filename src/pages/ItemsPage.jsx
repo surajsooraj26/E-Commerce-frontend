@@ -1,5 +1,6 @@
 // src/pages/ItemsPage.jsx
 import React, { useEffect, useState } from "react";
+import "./ItemsPage.css";
 import { getItems } from "../api/itemApi";
 import { addToCart } from "../api/cartApi";
 
@@ -78,9 +79,9 @@ const ItemsPage = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-6 items-list">
           {items.map((item) => (
-            <div key={item._id} className="border p-4 rounded shadow">
+            <div key={item._id} className="border p-4 rounded shadow item-card">
               <h2 className="text-lg font-semibold">{item.name}</h2>
               <p className="text-gray-600">{item.description}</p>
               <p className="text-green-700 font-bold">₹{item.price}</p>
